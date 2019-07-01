@@ -1,0 +1,31 @@
+{
+  "name": "@graft/server",
+  "version": "1.0.0",
+  "description": "The Graft package for server use",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bkonkle/graft.git"
+  },
+  "author": "Brandon Konkle <brandon@konkle.us> (https://deterministic.dev)",
+  "license": "BSD-2-Clause",
+  "scripts": {
+    "docs.build": "typedoc --out docs src --name \"Graft Server\"",
+    "docs.host": "http-server docs"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "graphile-build-pg": "^4.4.1",
+    "graphile-utils": "^4.4.1",
+    "graphql": "14.3.1",
+    "pg": "^7.11.0",
+    "postgraphile": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.4",
+    "http-server": "^0.11.1",
+    "typedoc": "^0.15.0-0"
+  },
+  "resolutions": {
+    "graphql": "14.3.1"
+  }
+}
