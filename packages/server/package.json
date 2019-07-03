@@ -18,7 +18,7 @@
     "debug": "^4.1.1",
     "graphile-build-pg": "^4.4.1",
     "graphile-utils": "^4.4.1",
-    "graphql": "14.3.1",
+    "graphql": "14.4.2",
     "graphql-utils": "^1.0.0",
     "pg": "^7.11.0",
     "postgraphile": "^4.4.1",
@@ -32,10 +32,10 @@
     "gql": "^1.1.2",
     "graphql-tag": "^2.10.1",
     "http-server": "^0.11.1",
-    "husky": "^2.4.1",
+    "husky": "^3.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
-    "lint-staged": "^8.2.1",
+    "lint-staged": "^9.0.2",
     "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
@@ -43,6 +43,6 @@
     "typescript": "^3.5.2"
   },
   "resolutions": {
-    "graphql": "14.3.1"
+    "graphql": "14.4.2"
   }
 }
