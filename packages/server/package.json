@@ -1,6 +1,6 @@
 {
   "name": "@graft/server",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Server tools for massively maintainable GraphQL",
   "repository": {
     "type": "git",
@@ -12,7 +12,8 @@
   "scripts": {
     "build": "tsc --declaration --pretty --skipLibCheck",
     "build.docs": "typedoc --out docs src --name \"Graft Server\"",
-    "host.docs": "http-server docs"
+    "host.docs": "http-server docs",
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "debug": "^4.1.1",

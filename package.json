@@ -21,8 +21,7 @@
     "test": "NODE_ENV=test jest",
     "build": "yarn build.server",
     "build.server": "cd packages/server && yarn build",
-    "build.docs": "cd packages/server && yarn build.docs",
-    "prepublish": "yarn build"
+    "build.docs": "cd packages/server && yarn build.docs"
   },
   "resolutions": {
     "graphql": "14.3.1"
