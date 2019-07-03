@@ -1,29 +1,46 @@
 {
   "name": "@graft/server",
   "version": "1.0.0",
-  "description": "The Graft package for server use",
+  "description": "Server tools for massively maintainable GraphQL",
   "repository": {
     "type": "git",
     "url": "git@github.com:bkonkle/graft.git"
   },
   "author": "Brandon Konkle <brandon@konkle.us> (https://deterministic.dev)",
   "license": "BSD-2-Clause",
+  "main": "lib/index.js",
   "scripts": {
-    "docs.build": "typedoc --out docs src --name \"Graft Server\"",
-    "docs.host": "http-server docs"
+    "build": "tsc --declaration --pretty --skipLibCheck",
+    "build.docs": "typedoc --out docs src --name \"Graft Server\"",
+    "host.docs": "http-server docs"
   },
   "dependencies": {
     "debug": "^4.1.1",
     "graphile-build-pg": "^4.4.1",
     "graphile-utils": "^4.4.1",
     "graphql": "14.3.1",
+    "graphql-utils": "^1.0.0",
     "pg": "^7.11.0",
-    "postgraphile": "^4.4.1"
+    "postgraphile": "^4.4.1",
+    "ramda": "^0.26.1",
+    "ts-essentials": "^2.0.11"
   },
   "devDependencies": {
     "@types/debug": "^4.1.4",
+    "@types/jest": "^24.0.15",
+    "@types/ramda": "^0.26.15",
+    "gql": "^1.1.2",
+    "graphql-tag": "^2.10.1",
     "http-server": "^0.11.1",
-    "typedoc": "^0.15.0-0"
+    "husky": "^2.4.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "typedoc": "^0.15.0-0",
+    "typescript": "^3.5.2"
   },
   "resolutions": {
     "graphql": "14.3.1"

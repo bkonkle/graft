@@ -535,6 +535,11 @@
     "@types/node" "*"
     "@types/pg-types" "*"
 
+"@types/ramda@^0.26.15":
+  version "0.26.15"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.26.15.tgz#217d9d2133f55040bd5db0e67dbbf6ec8509446f"
+  integrity sha512-kmIO8GVOLv0A8UxFr5lJaqp4g8jbXNhH0grBaPL6NgkOqSirRKpV9+5DTmIDXTyq2G18YMdxDhnScEZtY4brtQ==
+
 "@types/range-parser@*":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
@@ -1784,6 +1789,11 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+gql@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/gql/-/gql-1.1.2.tgz#355cb814f11a6d6e49e3393425628911ee100f63"
+  integrity sha1-NVy4FPEabW5J4zk0JWKJEe4QD2M=
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.0.tgz#8d8fdc73977cb04104721cb53666c1ca64cd328b"
@@ -1841,6 +1851,18 @@ graphql-parse-resolve-info@4.4.1-alpha.1:
   dependencies:
     "@types/graphql" "^14.2.0"
     debug "^4.1.1"
+
+graphql-tag@^2.10.1:
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
+  integrity sha512-jApXqWBzNXQ8jYa/HLkZJaVw9jgwNqZkywa2zfFn16Iv1Zb7ELNHkJaXHR7Quvd5SIGsy6Ny7SUKATgnu05uEg==
+
+graphql-utils@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/graphql-utils/-/graphql-utils-1.0.0.tgz#6adaf9ebeb5afbfad242623aa0f0ead609019e64"
+  integrity sha1-atr56+ta+/rSQmI6oPDq1gkBnmQ=
+  dependencies:
+    lodash "3.x.x"
 
 graphql@14.3.1, "graphql@>=0.9 <0.14 || ^14.0.2", "graphql@^0.6.0 || ^0.7.0 || ^0.8.0-b || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.2":
   version "14.3.1"
@@ -3089,6 +3111,11 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
+lodash@3.x.x:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+  integrity sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y=
+
 "lodash@>=4 <5", lodash@^4.17.11:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
@@ -4030,6 +4057,11 @@ qs@~6.5.2:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
+ramda@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.26.1.tgz#8d41351eb8111c55353617fc3bbffad8e4d35d06"
+  integrity sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
+
 raw-body@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.4.0.tgz#a1ce6fb9c9bc356ca52e89256ab59059e13d0332"
@@ -4784,6 +4816,11 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
+
+ts-essentials@^2.0.11:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-2.0.11.tgz#dc4d5f7c81785d3f624311c70927a9ee128cc385"
+  integrity sha512-614uBuD5StmKpJFDio+v3JhGELXMk1TrOJYuP/16q8haNUBsDmG0dI7+sN5Qhukwi2drbvUqdIOlrMKeBpdjwQ==
 
 ts-jest@^24.0.2:
   version "24.0.2"

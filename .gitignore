@@ -29,9 +29,6 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-
 # Optional npm cache directory
 .npm
 
@@ -55,13 +52,9 @@ build/Release
 
 # Build directories
 build
-.bsb.lock
 
 # Yeoman local state
 .yo-rc.json
-
-# Ocaml / Reason
-.merlin
 
 # Compiled files
 lib

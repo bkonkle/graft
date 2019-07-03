@@ -46,7 +46,7 @@ export interface GraphileRequest<Context = PostGraphileContext> {
 /**
  * Set up a prefixed debug logging handler
  */
-const debug = Debug('@graft/server:PostGraphileUtils')
+const debug = Debug('@graft/server:utils:PostGraphileUtils')
 
 /**
  * Collect the PostGraphile tools together and ensure they are properly typed.
@@ -55,7 +55,7 @@ export function createRequest<Context = PostGraphileContext>(
   build: Build,
   context: Context,
   resolveInfo: ResolveInfo
-) {
+): GraphileRequest<Context> {
   const sql: typeof SQL = build.pgSql
   const graphql: typeof GraphQL = build.graphql
 
@@ -86,10 +86,13 @@ export async function execute<Data, Input, Context = PostGraphileContext>(
   )
 
   if (result.errors) {
+    const error = new Error('GraphQL execute error')
+
     debug(
-      new Error('GraphQL execute error'),
-      JSON.stringify(result.errors, undefined, 2)
+      `GraphQL execute errors: ${JSON.stringify(result.errors, undefined, 2)}`
     )
+
+    throw error
   }
 
   return result.data

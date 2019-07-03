@@ -1,5 +1,5 @@
 {
-  "name": "graft",
+  "name": "@graft/monorepo",
   "version": "1.0.0",
   "description": "A loose GraphQL framework for rapid API development",
   "repository": {
@@ -10,37 +10,19 @@
   "license": "BSD-2-Clause",
   "keywords": [],
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ],
-    "nohoist": [
-      "**/react-native",
-      "**/react-native/**"
-    ]
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "format": "prettier --write",
     "format.all": "yarn format \"packages/**/*.{js,jsx,ts,tsx}\"",
     "check.types": "tsc --pretty --noEmit --skipLibCheck",
     "test.watch": "NODE_ENV=test jest --watch",
-    "test": "NODE_ENV=test jest"
-  },
-  "dependencies": {
-    "debug": "^4.1.1"
-  },
-  "devDependencies": {
-    "@types/debug": "^4.1.4",
-    "@types/jest": "^24.0.15",
-    "husky": "^2.4.1",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.8.0",
-    "lint-staged": "^8.2.1",
-    "prettier": "^1.18.2",
-    "ts-jest": "^24.0.2",
-    "ts-node": "^8.3.0",
-    "typedoc": "^0.15.0-0",
-    "typescript": "^3.5.2"
+    "test": "NODE_ENV=test jest",
+    "build": "yarn build.server",
+    "build.server": "cd packages/server && yarn build",
+    "build.docs": "cd packages/server && yarn build.docs",
+    "prepublish": "yarn build"
   },
   "resolutions": {
     "graphql": "14.3.1"
