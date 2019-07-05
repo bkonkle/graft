@@ -4,7 +4,6 @@
  */
 import Debug from 'debug'
 import GraphQL, {DocumentNode, GraphQLResolveInfo} from 'graphql'
-import {Build} from 'postgraphile'
 import {sql as SQL} from 'graphile-build-pg'
 import {Client} from 'pg'
 import {GraphileHelpers} from 'graphile-utils/node8plus/fieldHelpers'
@@ -29,7 +28,7 @@ export interface PostGraphileBuild {
  * Extend the GraphQLResolveInfo with helpers from PostGraphile.
  */
 export type ResolveInfo = GraphQLResolveInfo & {
-  graphile: GraphileHelpers<unknown>
+  graphile?: GraphileHelpers<unknown>
 }
 
 /**
@@ -46,16 +45,20 @@ export interface GraphileRequest<Context = PostGraphileContext> {
 /**
  * Set up a prefixed debug logging handler
  */
-const debug = Debug('@graft/server:utils:PostGraphileUtils')
+const debug = Debug('@cf/graphql:utils:PostGraphileUtils')
 
 /**
  * Collect the PostGraphile tools together and ensure they are properly typed.
  */
 export function createRequest<Context = PostGraphileContext>(
-  build: Build,
   context: Context,
   resolveInfo: ResolveInfo
-): GraphileRequest<Context> {
+) {
+  if (!resolveInfo.graphile) {
+    throw new Error('Unable to find Graphile utils on resolveInfo')
+  }
+
+  const build = resolveInfo.graphile.build
   const sql: typeof SQL = build.pgSql
   const graphql: typeof GraphQL = build.graphql
 
