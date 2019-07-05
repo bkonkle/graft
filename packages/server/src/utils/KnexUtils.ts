@@ -1,5 +1,13 @@
 import Knex, {CreateTableBuilder} from 'knex'
 
+export function primaryKey(table: Knex.CreateTableBuilder, name = 'id') {
+  table
+    .increments(name)
+    .notNullable()
+    .unique()
+    .primary()
+}
+
 export const primaryUuid = (knex: Knex, table: CreateTableBuilder) => (
   column?: string
 ) =>
@@ -31,4 +39,11 @@ export async function updateTimestamp(knex: Knex, tableName: string) {
       BEFORE UPDATE ON "${tableName}"
       FOR EACH ROW EXECUTE PROCEDURE set_updated_at();
   `)
+}
+
+export default {
+  primaryKey,
+  updateTimestamp,
+  primaryUuid,
+  foreignUuid,
 }
