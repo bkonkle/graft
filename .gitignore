@@ -58,6 +58,7 @@ build
 
 # Compiled files
 lib
+dist
 
 # Dependencies
 node_modules

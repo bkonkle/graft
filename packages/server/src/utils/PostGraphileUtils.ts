@@ -3,7 +3,11 @@
  * as if we were a client. It provides the `query` and `mutation` functions.
  */
 import Debug from 'debug'
-import GraphQL, {DocumentNode, GraphQLResolveInfo} from 'graphql'
+import GraphQL, {
+  DocumentNode,
+  GraphQLResolveInfo,
+  GraphQLFieldResolver,
+} from 'graphql'
 import {sql as SQL} from 'graphile-build-pg'
 import {Client} from 'pg'
 import {GraphileHelpers} from 'graphile-utils/node8plus/fieldHelpers'
@@ -41,6 +45,23 @@ export interface GraphileRequest<Context = PostGraphileContext> {
   resolveInfo: ResolveInfo
   build: PostGraphileBuild
 }
+
+/**
+ * A re-definition of the ResolverWrapperFn that PostGraphile uses, but doesn't export.
+ */
+export type ResolverWrapperFn<
+  TSource = any,
+  TContext = any,
+  TArgs = {
+    [argName: string]: any
+  }
+> = (
+  resolve: GraphQLFieldResolver<TSource, TContext, TArgs>,
+  source: TSource,
+  args: TArgs,
+  context: TContext,
+  resolveInfo: GraphQLResolveInfo
+) => any
 
 /**
  * Set up a prefixed debug logging handler
