@@ -8,7 +8,9 @@ export function primaryKey(table: Knex.CreateTableBuilder, name = 'id') {
     .primary()
 }
 
-export const primaryUuid = (knex: Knex, table: CreateTableBuilder) => (
+export const primaryUuid = (
+  knex: Knex,
+  table: CreateTableBuilder,
   column?: string
 ) =>
   table
