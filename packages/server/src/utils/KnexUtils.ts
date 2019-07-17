@@ -20,7 +20,8 @@ export const primaryUuid = (
     .unique()
     .defaultTo(knex.raw('uuid_generate_v4()'))
 
-export const foreignUuid = (table: CreateTableBuilder) => (
+export const foreignUuid = (
+  table: CreateTableBuilder,
   column: string,
   reference: {column: string; table: string},
   required?: boolean
