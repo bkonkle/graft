@@ -75,15 +75,17 @@ export function createRequest<Context = PostGraphileContext>(
   context: Context,
   resolveInfo: ResolveInfo
 ) {
-  if (!resolveInfo.graphile) {
+  const {graphile} = resolveInfo
+
+  if (!graphile) {
     throw new Error('Unable to find Graphile utils on resolveInfo')
   }
 
-  const build = resolveInfo.graphile.build
+  const {build} = graphile
   const sql: typeof SQL = build.pgSql
   const graphql: typeof GraphQL = build.graphql
 
-  return {context, resolveInfo, build: {sql, graphql}}
+  return {context, graphile, sql, graphql}
 }
 
 /**
