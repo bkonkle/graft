@@ -32,7 +32,7 @@ export interface PostGraphileBuild {
  * Extend the GraphQLResolveInfo with helpers from PostGraphile.
  */
 export type ResolveInfo<TSource = unknown> = GraphQLResolveInfo & {
-  graphile: GraphileHelpers<TSource>
+  graphile?: GraphileHelpers<TSource>
 }
 
 /**
@@ -81,6 +81,11 @@ export function createRequest<Context = PostGraphileContext>(
   resolveInfo: ResolveInfo
 ): GraphileRequest<Context> {
   const {graphile} = resolveInfo
+
+  if (!graphile) {
+    throw new Error('Unable to find Graphile utils')
+  }
+
   const {build} = graphile
   const sql: typeof SQL = build.pgSql
   const graphql: typeof GraphQL = build.graphql

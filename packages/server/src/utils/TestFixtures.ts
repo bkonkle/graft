@@ -54,14 +54,14 @@ export function createRequest(
 ): GraphileRequest<Context> {
   const resolveInfo = createResolveInfo(overrides.resolveInfo)
   const build = createBuildUtils({
-    sql: overrides.sql,
-    graphql: overrides.graphql,
+    ...(overrides.sql ? {sql: overrides.sql} : {}),
+    ...(overrides.graphql ? {graphql: overrides.graphql} : {}),
   })
 
   return {
     context: createContext(overrides.context),
     resolveInfo,
-    graphile: resolveInfo.graphile,
+    graphile: resolveInfo.graphile!,
     graphql: build.graphql,
     sql: build.sql,
   }

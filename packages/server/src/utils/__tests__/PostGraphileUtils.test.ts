@@ -28,7 +28,7 @@ describe('utils/PostGraphileUtils', () => {
         },
       }
 
-      const graphQlExecute = graphql!.execute as jest.Mock
+      const graphQlExecute = graphql.execute as jest.Mock
       graphQlExecute.mockResolvedValue({
         data,
       })
@@ -55,7 +55,7 @@ describe('utils/PostGraphileUtils', () => {
       const {graphql} = request
       const error = 'Test Error'
 
-      const graphQlExecute = graphql!.execute as jest.Mock
+      const graphQlExecute = graphql.execute as jest.Mock
       graphQlExecute.mockResolvedValue({
         data: null,
         errors: [error],
