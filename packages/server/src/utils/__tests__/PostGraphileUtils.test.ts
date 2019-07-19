@@ -20,9 +20,7 @@ describe('utils/PostGraphileUtils', () => {
     it('executes GraphQL requests', async () => {
       const request = TestFixtures.createRequest()
 
-      const {
-        build: {graphql},
-      } = request
+      const {graphql} = request
 
       const data = {
         allPeople: {
@@ -54,9 +52,7 @@ describe('utils/PostGraphileUtils', () => {
 
     it('rejects with errors', async () => {
       const request = TestFixtures.createRequest()
-      const {
-        build: {graphql},
-      } = request
+      const {graphql} = request
       const error = 'Test Error'
 
       const graphQlExecute = graphql!.execute as jest.Mock
