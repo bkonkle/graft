@@ -53,12 +53,17 @@ export function createRequest(
   overrides: DeepPartial<GraphileRequest<Context>> = {}
 ): GraphileRequest<Context> {
   const resolveInfo = createResolveInfo(overrides.resolveInfo)
+  const build = createBuildUtils({
+    sql: overrides.sql,
+    graphql: overrides.graphql,
+  })
 
   return {
     context: createContext(overrides.context),
     resolveInfo,
     graphile: resolveInfo.graphile,
-    ...createBuildUtils(overrides.build),
+    graphql: build.graphql,
+    sql: build.sql,
   }
 }
 
