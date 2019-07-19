@@ -40,10 +40,15 @@ export type ResolveInfo<TSource = unknown> = GraphQLResolveInfo & {
  * with `createRequest` below to allow users to extend the context based on what
  * they've added with the `additionalGraphQLContextFromRequest` PostGraphile option.
  */
-export interface GraphileRequest<Context = PostGraphileContext> {
+export interface GraphileRequest<
+  Context = PostGraphileContext,
+  TSource = unknown
+> {
   context: Context
   resolveInfo: ResolveInfo
-  build: PostGraphileBuild
+  graphile: GraphileHelpers<TSource>
+  graphql: typeof GraphQL
+  sql: typeof SQL
 }
 
 /**
@@ -74,13 +79,13 @@ const debug = Debug('@cf/graphql:utils:PostGraphileUtils')
 export function createRequest<Context = PostGraphileContext>(
   context: Context,
   resolveInfo: ResolveInfo
-) {
+): GraphileRequest<Context> {
   const {graphile} = resolveInfo
   const {build} = graphile
   const sql: typeof SQL = build.pgSql
   const graphql: typeof GraphQL = build.graphql
 
-  return {context, graphile, sql, graphql}
+  return {context, resolveInfo, graphile, sql, graphql}
 }
 
 /**
@@ -90,8 +95,7 @@ export async function execute<Data, Input, Context = PostGraphileContext>(
   request: GraphileRequest<Context>,
   options: {node: DocumentNode; variables: Input}
 ) {
-  const {build} = request
-  const {graphql} = build
+  const {graphql} = request
   const {node, variables} = options
 
   if (!graphql) {
