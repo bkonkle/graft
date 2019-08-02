@@ -23,6 +23,13 @@
     "build.server": "cd packages/server && yarn build",
     "build.docs": "cd packages/server && yarn build.docs"
   },
+  "devDependencies": {
+    "knex": "^0.19.1",
+    "pg": "^7.11.0",
+    "postgraphile": "^4.4.1",
+    "graphile-build-pg": "^4.4.1",
+    "graphile-utils": "^4.4.1"
+  },
   "resolutions": {
     "graphql": "14.3.1"
   }
