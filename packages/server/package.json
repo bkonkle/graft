@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git@github.com:bkonkle/graft.git"
   },
-  "author": "Brandon Konkle <brandon@konkle.us> (https://deterministic.dev)",
+  "author": "Brandon Konkle <brandon@konkle.us> (https://konkle.us)",
   "license": "BSD-2-Clause",
   "main": "lib/index.js",
   "scripts": {
