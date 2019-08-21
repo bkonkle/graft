@@ -25,7 +25,7 @@ yarn add @graft/server postgraphile pg knex
 Execute a Query against PostGraphile's internal schema. This allows you to use PostGraphile internally and take advantage of GraphQL's expressive syntax for your API business logic.
 
 ```ts
-import {query} from '@graft/server`
+import {query} from '@graft/server'
 
 import {
   AllMountainsQuery,
@@ -54,7 +54,7 @@ const fourteeners = await query<AllMountainsQuery, AllMountainsQueryVariables>(
 Execute a Mutation against PostGraphile's internal schema.
 
 ```ts
-import {mutation} from '@graft/server`
+import {mutation} from '@graft/server'
 
 import {
   UpdateMountainByIdMutation,
@@ -193,7 +193,7 @@ yarn add @graft/client
 Get nodes from either a `nodes` property or an `edges` property on an object, stripping out any empty elements and cleaning up the TypeScript type.
 
 ```ts
-import {getNodesFromConnection} from '@graft/client`
+import {getNodesFromConnection} from '@graft/client'
 
 const comics = getNodesFromConnection(data.comicsByShopId)
 ```
