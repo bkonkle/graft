@@ -97,6 +97,68 @@ import {createRequest} from '@graft/server'
   },
 ```
 
+#### ResolverUtils
+
+##### `selectById`
+
+```ts
+selectById = async <Context = PostGraphileContext>(
+  request: GraphileRequest<Context>,
+  tableName: string,
+  id: number
+): Promise<GraphileData[]>
+```
+
+An alias for this:
+
+```ts
+graphile.selectGraphQLResultFromTable(
+  sql.fragment`table_name`,
+  (tableAlias, queryBuilder) => {
+    queryBuilder.where(sql.fragment`${tableAlias}.id = ${sql.value(id)}`)
+  }
+)
+```
+
+`GraphileData` is currently just an alias for `{data: any}`, but will likely get more precise over time.
+
+##### `selectByIdList`
+
+```ts
+selectByIdList = async <Context = PostGraphileContext>(
+  request: GraphileRequest<Context>,
+  tableName: string,
+  ids: number[]
+): Promise<GraphileData[]>
+```
+
+An alias for this:
+
+```ts
+graphile.selectGraphQLResultFromTable(
+  sql.fragment`table_name`,
+  (tableAlias, queryBuilder) => {
+    queryBuilder.where(sql.fragment`${tableAlias}.id = ANY(${sql.value(ids)})`)
+  }
+)
+```
+
+##### `runSerial`
+
+```ts
+runSerial = async <A>(
+  funcs: Array<() => Promise<A>>
+): Promise<A[]>
+```
+
+Takes an array of thunks (to prevent the Promises from firing before we're ready), and resolves them in sequence rather than concurrently. This prevents the problem of `Promise.all()` causing too many connections.
+
+```ts
+const results = await runSerial(
+  ids.map(id => () => BugController.getById(request, id))
+)
+```
+
 #### KnexUtils
 
 ##### `primaryKey`
