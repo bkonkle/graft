@@ -24,7 +24,7 @@
     "build.docs": "cd packages/server && yarn build.docs"
   },
   "devDependencies": {
-    "knex": "^0.19.2",
+    "knex": "^0.19.5",
     "pg": "^7.12.1",
     "postgraphile": "^4.4.3",
     "graphile-build-pg": "^4.4.4",
