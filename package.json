@@ -22,16 +22,5 @@
     "build": "yarn build.server",
     "build.server": "cd packages/server && yarn build",
     "build.docs": "cd packages/server && yarn build.docs"
-  },
-  "devDependencies": {
-    "knex": "^0.19.2",
-    "pg": "^7.12.1",
-    "postgraphile": "^4.4.3",
-    "graphile-build-pg": "^4.4.4",
-    "graphile-utils": "^4.4.4"
-  },
-  "resolutions": {
-    "graphql": "14.4.2",
-    "lodash": "^4.17.13"
   }
 }
