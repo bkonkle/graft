@@ -18,7 +18,7 @@ yarn add @graft/server postgraphile pg knex
 
 ### Usage
 
-#### PostGraphileUtils
+#### GraphileUtils
 
 ##### `query`
 

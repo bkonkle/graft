@@ -1,4 +1,4 @@
-import {PostGraphileContext, GraphileRequest} from './PostGraphileUtils'
+import {PostGraphileContext, GraphileRequest} from './GraphileUtils'
 
 export interface GraphileData {
   data: any

@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-import {execute} from '../PostGraphileUtils'
+import {execute} from '../GraphileUtils'
 import TestFixtures from '../TestFixtures'
 
 jest.mock('debug', () => () => jest.fn())
@@ -15,7 +15,7 @@ const Document = gql`
   }
 `
 
-describe('utils/PostGraphileUtils', () => {
+describe('utils/GraphileUtils', () => {
   describe('execute()', () => {
     it('executes GraphQL requests', async () => {
       const request = TestFixtures.createRequest()
