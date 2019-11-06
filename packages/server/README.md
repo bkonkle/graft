@@ -106,8 +106,8 @@ Graft will use PostGraphile to introspect your PostgreSQL database and auto-gene
 
 ### Schema
 
-To find helpers for managing your database schema with Knex, take a look at the [@graft/knex](packages/knex) package.
+To find helpers for managing your database schema with Knex, take a look at the [@graft/knex](../packages/knex) package.
 
 ### Utils
 
-To find helpers for working with PostGraphile and implementing business logic for your server, take a look at the [utils](packages/server/src/utils) folder.
+To find helpers for working with PostGraphile and implementing business logic for your server, take a look at the [utils](src/utils) folder.
