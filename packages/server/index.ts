@@ -1,4 +1,5 @@
 import {createRequest, query, mutation} from './src/utils/GraphileUtils'
+import {GraftConfig, withGraft, run} from './src/server/Express'
 import * as GraphileUtils from './src/utils/GraphileUtils'
 import * as KnexUtils from './src/utils/KnexUtils'
 
@@ -29,4 +30,13 @@ export {
   makeProcessSchemaPlugin,
 }
 
-export {GraphileUtils, KnexUtils, createRequest, query, mutation}
+export {
+  GraftConfig,
+  GraphileUtils,
+  KnexUtils,
+  createRequest,
+  query,
+  mutation,
+  withGraft,
+  run,
+}

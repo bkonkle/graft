@@ -8,7 +8,7 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '/lib/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   collectCoverageFrom: ['src/**/*.{ts,tsx.js,jsx,mjs}'],
-  setupFilesAfterEnv: ['<rootDir>/TestSetup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/src/utils/TestSetup.ts'],
   globals: {
     'ts-jest': {
       diagnostics: false,
