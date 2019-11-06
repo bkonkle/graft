@@ -13,7 +13,7 @@ import {PostGraphileOptions, postgraphile} from 'postgraphile'
 export interface GraftConfig {
   jwt: Omit<jwt.Options, 'secret'>
   jwks: jwks.ExpressJwtOptions
-  playground: MiddlewareOptions
+  playground?: MiddlewareOptions
   postgraphile: PostGraphileOptions
   database: {
     url?: string
