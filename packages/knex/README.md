@@ -1,4 +1,4 @@
-# KnexUtils
+# @graft/knex
 
 ## Installation
 

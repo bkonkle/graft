@@ -1,4 +1,4 @@
-# Graft Server Tools
+# @graft/server
 
 Graft includes a set of server tools, including a convenience wrapper for Express called `withGraft`. By default, you can get up and running with a minimal configuration and Graft will use a set of sensible defaults.
 

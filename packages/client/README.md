@@ -1,4 +1,4 @@
-# Graft Client Tools
+# @graft/client
 
 ## Installation
 
