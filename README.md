@@ -4,7 +4,7 @@ _Massively Maintainable GraphQL_
 
 ## Overview
 
-Graft is a set of companion libraries for [PostGraphile](https://www.graphile.org/postgraphile/), offering opinionated tools for working with PostGraphile's outstanding [PostgreSQL](https://www.postgresql.org/) + [GraphQL](https://graphql.org/) solution in an efficient and easy-to-maintain way.
+Graft is a set of helpers and convenience wrappers for [PostGraphile](https://www.graphile.org/postgraphile/), offering opinionated tools for working with PostGraphile's outstanding [PostgreSQL](https://www.postgresql.org/) + [GraphQL](https://graphql.org/) solution in an efficient and easy-to-maintain way.
 
 Graft is built to be easily overridden, and you don't have to use convenience wrappers like `withGraft` if you'd like more control over your configuration.
 
