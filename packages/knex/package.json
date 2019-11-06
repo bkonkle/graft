@@ -1,6 +1,6 @@
 {
   "name": "@graft/knex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Knex integration for Graft",
   "repository": {
     "type": "git",
