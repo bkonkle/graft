@@ -13,6 +13,7 @@ import {
   makeChangeNullabilityPlugin,
   makePluginByCombiningPlugins,
   makeProcessSchemaPlugin,
+  gql,
 } from 'graphile-utils'
 
 /**
@@ -27,6 +28,7 @@ export {
   makeChangeNullabilityPlugin,
   makePluginByCombiningPlugins,
   makeProcessSchemaPlugin,
+  gql,
 }
 
 export {
