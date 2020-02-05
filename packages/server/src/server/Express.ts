@@ -59,12 +59,19 @@ export function withGraft(
     }
   )
 
-  return app
+  app
     .get(endpoint, noop(config.dev, playgroundMiddleware))
     .use(jwtCheck)
     .use(cors(config.cors))
     .use(bodyParser.json())
-    .use(pgMiddleware)
+
+  if (baseUrl) {
+    app.use(baseUrl, pgMiddleware)
+  } else {
+    app.use(pgMiddleware)
+  }
+
+  return app
 }
 
 export function run(
