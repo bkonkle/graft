@@ -23,7 +23,13 @@ export interface GraftConfig {
   dev?: boolean
 }
 
-export function withGraft(app: Application, config: GraftConfig) {
+export function withGraft(
+  app: Application,
+  config: GraftConfig,
+  baseUrl?: string
+) {
+  const endpoint = `${baseUrl || ''}/graphql`
+
   const jwtCheck = jwt({
     ...config.jwt,
     secret: jwks.expressJwtSecret({
@@ -35,7 +41,7 @@ export function withGraft(app: Application, config: GraftConfig) {
   })
 
   const playgroundMiddleware = playground({
-    endpoint: '/graphql',
+    endpoint,
     settings: {
       // @ts-ignore - incomplete type
       'schema.polling.enable': false,
@@ -54,22 +60,28 @@ export function withGraft(app: Application, config: GraftConfig) {
   )
 
   return app
-    .get('/graphql', noop(config.dev, playgroundMiddleware))
+    .get(endpoint, noop(config.dev, playgroundMiddleware))
     .use(jwtCheck)
     .use(cors(config.cors))
     .use(bodyParser.json())
     .use(pgMiddleware)
 }
 
-export function run(app: Application, port: number, appName?: string) {
+export function run(
+  app: Application,
+  port: number,
+  appName?: string,
+  baseUrl?: string
+) {
+  const baseUrlStr = baseUrl ? `at ${baseUrl}` : ''
+  const portStr = chalk.yellow(port.toString())
+
   const server = http.createServer(app)
 
   server.listen(port, () => {
     console.log(
       chalk.cyan(
-        `> Started ${appName || 'GraphQL API'} on port ${chalk.yellow(
-          port.toString()
-        )}`
+        `> Started ${appName || 'GraphQL API'} on port ${portStr}${baseUrlStr}`
       )
     )
   })
@@ -77,4 +89,22 @@ export function run(app: Application, port: number, appName?: string) {
   server.on('close', () => {
     console.log(chalk.cyan(`> ${appName || 'GraphQL API'} shutting down`))
   })
+}
+
+export interface RunWithGraftOptions {
+  app: Application
+  config: GraftConfig
+  port: number
+  appName?: string
+  baseUrl?: string
+}
+
+export function runWithGraft({
+  app,
+  config,
+  port,
+  appName,
+  baseUrl,
+}: RunWithGraftOptions) {
+  return run(withGraft(app, config, baseUrl), port, appName, baseUrl)
 }

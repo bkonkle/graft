@@ -1,5 +1,5 @@
 import {createRequest, query, mutation} from './src/utils/GraphileUtils'
-import {GraftConfig, withGraft, run} from './src/server/Express'
+import {GraftConfig, withGraft, run, runWithGraft} from './src/server/Express'
 import * as GraphileUtils from './src/utils/GraphileUtils'
 import * as Plugins from './src/plugins'
 
@@ -41,4 +41,5 @@ export {
   mutation,
   withGraft,
   run,
+  runWithGraft,
 }
