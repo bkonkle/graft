@@ -1,6 +1,6 @@
 {
   "name": "@graft/server",
-  "version": "5.1.3",
+  "version": "5.2.0",
   "description": "Server tools for massively maintainable GraphQL",
   "repository": {
     "type": "git",

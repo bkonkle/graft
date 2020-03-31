@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 import {execute} from '../GraphileUtils'
-import TestFixtures from '../TestFixtures'
+import TestFixtures from '../../../test/TestFixtures'
 
 jest.mock('debug', () => () => jest.fn())
 

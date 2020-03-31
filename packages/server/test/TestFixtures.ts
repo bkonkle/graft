@@ -1,7 +1,11 @@
 import {mergeDeepRight as merge} from 'ramda'
 import {DeepPartial} from 'ts-essentials'
 
-import {ResolveInfo, PostGraphileBuild, GraphileRequest} from './GraphileUtils'
+import {
+  ResolveInfo,
+  PostGraphileBuild,
+  GraphileRequest,
+} from '../src/utils/GraphileUtils'
 
 interface Context {
   pgClient?: any

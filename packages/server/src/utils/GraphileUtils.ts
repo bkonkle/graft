@@ -71,7 +71,7 @@ export type ResolverWrapperFn<
 /**
  * Set up a prefixed debug logging handler
  */
-const debug = Debug('@cf/graphql:utils:GraphileUtils')
+const debug = Debug('@graft/server:utils:GraphileUtils')
 
 /**
  * Collect the PostGraphile tools together and ensure they are properly typed.
