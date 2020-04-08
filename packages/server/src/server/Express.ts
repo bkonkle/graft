@@ -18,6 +18,7 @@ export interface GraftConfig {
   database: {
     url?: string
     name?: string
+    schema?: string
   }
   cors?: cors.CorsOptions
   dev?: boolean
@@ -51,7 +52,7 @@ export function withGraft(
 
   const pgMiddleware = postgraphile(
     config.database.url,
-    config.database.name || 'public',
+    config.database.schema || 'public',
     {
       dynamicJson: true,
       setofFunctionsContainNulls: false,
