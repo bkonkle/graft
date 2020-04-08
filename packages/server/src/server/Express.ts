@@ -9,6 +9,7 @@ import playground from 'graphql-playground-middleware-express'
 import {Application} from 'express'
 import {MiddlewareOptions} from 'graphql-playground-html'
 import {PostGraphileOptions, postgraphile} from 'postgraphile'
+import {Pool, PoolConfig} from 'pg'
 
 export interface GraftConfig {
   jwt: Omit<jwt.Options, 'secret'>
@@ -18,7 +19,8 @@ export interface GraftConfig {
   database: {
     url?: string
     name?: string
-    schema?: string
+    schema?: string | string[]
+    pool?: Pool | PoolConfig
   }
   cors?: cors.CorsOptions
   dev?: boolean
@@ -51,7 +53,7 @@ export function withGraft(
   })
 
   const pgMiddleware = postgraphile(
-    config.database.url,
+    config.database.url || config.database.pool,
     config.database.schema || 'public',
     {
       dynamicJson: true,
