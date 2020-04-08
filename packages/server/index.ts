@@ -1,5 +1,11 @@
 import {createRequest, query, mutation} from './src/utils/GraphileUtils'
-import {GraftConfig, withGraft, run, runWithGraft} from './src/server/Express'
+import {
+  GraftConfig,
+  Token,
+  run,
+  runWithGraft,
+  withGraft,
+} from './src/server/Express'
 import * as GraphileUtils from './src/utils/GraphileUtils'
 import * as Plugins from './src/plugins'
 
@@ -9,12 +15,12 @@ import {
   postgraphile,
 } from 'postgraphile'
 import {
-  makeWrapResolversPlugin,
-  makeExtendSchemaPlugin,
+  gql,
   makeChangeNullabilityPlugin,
+  makeExtendSchemaPlugin,
   makePluginByCombiningPlugins,
   makeProcessSchemaPlugin,
-  gql,
+  makeWrapResolversPlugin,
 } from 'graphile-utils'
 
 /**
@@ -23,23 +29,24 @@ import {
 export {
   GraphQLErrorExtended,
   PostGraphileOptions,
-  postgraphile,
-  makeWrapResolversPlugin,
-  makeExtendSchemaPlugin,
+  gql,
   makeChangeNullabilityPlugin,
+  makeExtendSchemaPlugin,
   makePluginByCombiningPlugins,
   makeProcessSchemaPlugin,
-  gql,
+  makeWrapResolversPlugin,
+  postgraphile,
 }
 
 export {
   GraftConfig,
   GraphileUtils,
   Plugins,
+  Token,
   createRequest,
-  query,
   mutation,
-  withGraft,
+  query,
   run,
   runWithGraft,
+  withGraft,
 }
