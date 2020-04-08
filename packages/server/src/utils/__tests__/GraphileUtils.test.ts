@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 import {execute} from '../GraphileUtils'
-import TestFixtures from '../../../test/TestFixtures'
+import Fixtures from '../../../test/Fixtures'
 
 jest.mock('debug', () => () => jest.fn())
 
@@ -18,7 +18,7 @@ const Document = gql`
 describe('utils/GraphileUtils', () => {
   describe('execute()', () => {
     it('executes GraphQL requests', async () => {
-      const request = TestFixtures.createRequest()
+      const request = Fixtures.createRequest()
 
       const {graphql} = request
 
@@ -51,7 +51,7 @@ describe('utils/GraphileUtils', () => {
     })
 
     it('rejects with errors', async () => {
-      const request = TestFixtures.createRequest()
+      const request = Fixtures.createRequest()
       const {graphql} = request
       const error = 'Test Error'
 

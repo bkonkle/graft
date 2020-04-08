@@ -11,6 +11,16 @@ import {MiddlewareOptions} from 'graphql-playground-html'
 import {PostGraphileOptions, postgraphile} from 'postgraphile'
 import {Pool, PoolConfig} from 'pg'
 
+export interface Token {
+  iss: string
+  sub: string
+  aud: string[]
+  iat: number
+  exp: number
+  azp: string
+  scope: string
+}
+
 export interface GraftConfig {
   jwt: Omit<jwt.Options, 'secret'>
   jwks: jwks.ExpressJwtOptions
