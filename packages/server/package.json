@@ -20,7 +20,7 @@
     "chalk": "^3.0.0",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
-    "express-jwt": "^5.3.1",
+    "express-jwt": "^6.0.0",
     "express-noop": "^1.1.0",
     "graphile-build": "^4.5.0",
     "graphile-build-pg": "^4.5.3",
